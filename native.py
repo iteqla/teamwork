@@ -31,7 +31,7 @@ def del_temp_files():
 
 def win_activation():
     system('slmgr /skms ushwbmswpz925.one.ad.bms.com:1688')
-    system('slmgr.vbs /ipk 33PXH-7Y6KF-2VJC9-XBBR8-HVTHH')
+    system('slmgr.vbs /ipk windows key')
     system('slmgr /ato')
     show_msg()
 
@@ -39,7 +39,7 @@ def win_activation():
 def office_activation():
     chdir('/program files/microsoft office/office15')
     system('ospprearm.exe')
-    system('cscript ospp.vbs /inpkey:YC7DK-G2NP3-2QQC3-J6H88-GVGXT')
+    system('cscript ospp.vbs /inpkey:office key')
     system('cscript ospp.vbs /act')
     show_msg()
 
