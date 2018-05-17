@@ -45,7 +45,14 @@ def office_activation():
 
 
 def pwdmgr():
-    system('powershell -noexit -command cmdkey /list | ForEach-Object{if($_ -like "*Target:*"){cmdkey /del:($_ -replace " ","" -replace "Target:","")}}')
+    my_cmd = 'powershell'
+     # " -noexit -command cmdkey /list | ForEach-Object{if($_ -like "*Target:*"){cmdkey /del:($_ -replace " ","" -replace "Target:","")}}')
+    my_cmd += ' -noexit '
+    my_cmd += '-command '
+    my_cmd += 'cmdkey /list | ForEach-Object{if($_ -like '
+    my_cmd +='"*Target:*")'
+    my_cmd +='{cmdkey /del:($_ -replace " ","" -replace "Target:","")}}'
+    system(my_cmd)
 
 
 def cleanup():
